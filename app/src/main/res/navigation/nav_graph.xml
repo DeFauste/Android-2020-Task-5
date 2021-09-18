@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.luckycat.MainFragment"
+        android:label="Lucky Cats"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentShowCat"
+            app:destination="@id/fragmentShowCat" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentShowLiked"
+            app:destination="@id/fragmentShowLiked" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentShowCat"
+        android:name="com.example.luckycat.FragmentShowCat"
+        android:label="Look at the cats"
+        tools:layout="@layout/fragment_show_cat">
+        <action
+            android:id="@+id/action_fragmentShowCat_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentShowLiked"
+        android:name="com.example.luckycat.FragmentShowLiked"
+        android:label="Saved cats"
+        tools:layout="@layout/fragment_show_liked">
+        <action
+            android:id="@+id/action_fragmentShowLiked_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

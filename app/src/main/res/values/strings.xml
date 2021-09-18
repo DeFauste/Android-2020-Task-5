@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Lucky Cat</string>
+    <string name="text_main_bt_show">Show cat</string>
+    <string name="fragment_main_bt_saved">Saved cat</string>
+
+
+
+    <string name="example_text">Miu-miu-miu-miu-miu
+    -miu-miu-miu-miu-miu-miu-miu-miu-miu-miu
+    -miu-miu-miu-miu-miu-miu-miu-miu-miu-miu-miu-miu
+    -miu-miu-miu-miu-miu-miu-miu-miu-miu-miu
+    -miu-miu-miu-miu-miu-miu</string>
 </resources>
