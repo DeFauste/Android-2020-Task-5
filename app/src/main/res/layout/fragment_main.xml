@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="@id/page_cat"
         app:layout_constraintLeft_toLeftOf="@id/page_cat"
         app:layout_constraintRight_toRightOf="@id/page_cat"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="180dp"
         />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/saved_cat"
