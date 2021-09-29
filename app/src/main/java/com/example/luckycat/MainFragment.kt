@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.example.luckycat.R
 import com.example.luckycat.databinding.FragmentMainBinding
 
 // TODO: Rename parameter arguments, choose names that match

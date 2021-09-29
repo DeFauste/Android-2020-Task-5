@@ -15,7 +15,8 @@
             app:destination="@id/fragmentShowCat" />
         <action
             android:id="@+id/action_mainFragment_to_fragmentShowLiked"
-            app:destination="@id/fragmentShowLiked" />
+            app:destination="@id/fragmentShowLiked"
+            />
     </fragment>
     <fragment
         android:id="@+id/fragmentShowCat"
@@ -25,6 +26,14 @@
         <action
             android:id="@+id/action_fragmentShowCat_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_fragmentShowCat_to_showSingleImage"
+            app:destination="@id/showSingleImage"
+            app:enterAnim="@anim/flip_left_in"
+            app:exitAnim="@anim/flip_left_out"
+            app:popEnterAnim="@anim/flip_right_in"
+            app:popExitAnim="@anim/flip_right_out"
+            />
     </fragment>
     <fragment
         android:id="@+id/fragmentShowLiked"
@@ -34,5 +43,18 @@
         <action
             android:id="@+id/action_fragmentShowLiked_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showSingleImage"
+        android:name="com.example.luckycat.fragments.ShowSingleImage"
+        tools:layout="@layout/fragment_show_single_image">
+        <action
+            android:id="@+id/action_showSingleImage_to_fragmentShowCat"
+            app:destination="@id/fragmentShowCat"
+            app:enterAnim="@anim/flip_left_in"
+            app:exitAnim="@anim/flip_left_out"
+            app:popEnterAnim="@anim/flip_right_in"
+            app:popExitAnim="@anim/flip_right_out"
+            />
     </fragment>
 </navigation>

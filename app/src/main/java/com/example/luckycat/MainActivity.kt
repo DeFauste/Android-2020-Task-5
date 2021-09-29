@@ -1,4 +1,4 @@
-package com.example.luckycat.fragments
+package com.example.luckycat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

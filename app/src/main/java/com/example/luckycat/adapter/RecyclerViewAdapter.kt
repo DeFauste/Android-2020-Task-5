@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.luckycat.R
 import com.example.luckycat.network.CatProperty
+import com.example.luckycat.ui.ItemClickListener
 
-class RecyclerViewAdapter: PagingDataAdapter<CatProperty, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack())  {
+class RecyclerViewAdapter(private val itemClick: ItemClickListener) :
+    PagingDataAdapter<CatProperty, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()) {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(getItem(position)!!)
     }
@@ -24,10 +26,10 @@ class RecyclerViewAdapter: PagingDataAdapter<CatProperty, RecyclerViewAdapter.My
     ): MyViewHolder {
         val inflater = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
 
-        return MyViewHolder(inflater)
+        return MyViewHolder(inflater,itemClick)
     }
 
-    class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class MyViewHolder(view: View, private val itemClick: ItemClickListener) : RecyclerView.ViewHolder(view) {
 
         val imageView: ImageView = view.findViewById(R.id.cat_image)
         val text = view.findViewById<TextView>(R.id.cat_history)
@@ -37,9 +39,13 @@ class RecyclerViewAdapter: PagingDataAdapter<CatProperty, RecyclerViewAdapter.My
             Glide.with(imageView)
                 .load(data.imgSrcUrl)
                 .into(imageView)
+            imageView.setOnClickListener {
+                itemClick.onItemClick(data.imgSrcUrl)
+            }
         }
     }
-    class DiffUtilCallBack: DiffUtil.ItemCallback<CatProperty>() {
+
+    class DiffUtilCallBack : DiffUtil.ItemCallback<CatProperty>() {
         override fun areItemsTheSame(oldItem: CatProperty, newItem: CatProperty): Boolean {
             return oldItem.id == newItem.id
         }
