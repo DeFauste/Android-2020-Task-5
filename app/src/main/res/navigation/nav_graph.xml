@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_fragmentShowCat"
-            app:destination="@id/fragmentShowCat" />
+            app:destination="@id/fragmentShowCat"
+            />
         <action
             android:id="@+id/action_mainFragment_to_fragmentShowLiked"
             app:destination="@id/fragmentShowLiked"
@@ -51,10 +52,10 @@
         <action
             android:id="@+id/action_showSingleImage_to_fragmentShowCat"
             app:destination="@id/fragmentShowCat"
-            app:enterAnim="@anim/flip_left_in"
-            app:exitAnim="@anim/flip_left_out"
-            app:popEnterAnim="@anim/flip_right_in"
-            app:popExitAnim="@anim/flip_right_out"
+            app:enterAnim="@anim/flip_right_in"
+            app:exitAnim="@anim/flip_right_out"
+            app:popEnterAnim="@anim/flip_left_in"
+            app:popExitAnim="@anim/flip_left_out"
             />
     </fragment>
 </navigation>

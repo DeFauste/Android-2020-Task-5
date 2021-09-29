@@ -38,11 +38,11 @@ class ShowSingleImage : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(context, url, Toast.LENGTH_SHORT).show()
         Glide.with(binding.image)
             .load(url)
             .into(binding.image)
     }
+
     companion object {
         @JvmStatic
         fun newInstance(url: String) =

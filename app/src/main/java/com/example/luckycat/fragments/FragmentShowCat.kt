@@ -73,7 +73,7 @@ class FragmentShowCat : Fragment() {
                     val bundle = bundleOf(
                         "URL_IMAGE" to url
                     )
-                    findNavController().navigate(R.id.showSingleImage,bundle)
+                    findNavController().navigate(R.id.action_fragmentShowCat_to_showSingleImage,bundle)
                 }
             })
             adapter = recyclerViewAdapter
