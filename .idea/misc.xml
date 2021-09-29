@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/bg_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/bt_background.xml" value="0.2703125" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/fish.xml" value="0.2703125" />
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/ic_broken_image.xml" value="0.2703125" />
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/ic_connection_error.xml" value="0.2703125" />
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/ic_for_sale_outline.xml" value="0.2703125" />
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/drawable/loading_img.xml" value="0.2703125" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/layout/fragment_main.xml" value="0.4" />
         <entry key="..\:/Users/Debran/Documents/GitHub/Android-2020-Task-5/app/src/main/res/layout/fragment_show_cat.xml" value="0.23052536231884058" />

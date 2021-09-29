@@ -8,6 +8,7 @@
     app:cardCornerRadius="15dp"
     app:cardBackgroundColor="#8BCDBC"
     >
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +19,6 @@
         android:id="@+id/cat_image"
         android:layout_width="140dp"
         android:layout_height="match_parent"
-        android:background="@drawable/cat_main"
         />
         <TextView
             android:id="@+id/cat_history"

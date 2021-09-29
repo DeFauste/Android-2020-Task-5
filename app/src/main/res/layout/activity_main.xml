@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".fragments.MainActivity"
     >
-    
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_navigation"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -18,6 +17,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

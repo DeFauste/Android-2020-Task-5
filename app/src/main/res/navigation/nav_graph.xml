@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentShowCat"
-        android:name="com.example.luckycat.FragmentShowCat"
+        android:name="com.example.luckycat.fragments.FragmentShowCat"
         android:label="Look at the cats"
         tools:layout="@layout/fragment_show_cat">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentShowLiked"
-        android:name="com.example.luckycat.FragmentShowLiked"
+        android:name="com.example.luckycat.fragments.FragmentShowLiked"
         android:label="Saved cats"
         tools:layout="@layout/fragment_show_liked">
         <action
