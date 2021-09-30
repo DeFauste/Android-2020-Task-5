@@ -41,11 +41,6 @@ class FragmentShowCat : Fragment() {
     lateinit var recyclerViewAdapter: RecyclerViewAdapter
     private val viewModel: CatsListViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,7 +68,10 @@ class FragmentShowCat : Fragment() {
                     val bundle = bundleOf(
                         "URL_IMAGE" to url
                     )
-                    findNavController().navigate(R.id.action_fragmentShowCat_to_showSingleImage,bundle)
+                    findNavController().navigate(
+                        R.id.action_fragmentShowCat_to_showSingleImage,
+                        bundle
+                    )
                 }
             })
             adapter = recyclerViewAdapter
