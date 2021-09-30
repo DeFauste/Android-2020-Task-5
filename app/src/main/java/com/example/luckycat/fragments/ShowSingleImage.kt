@@ -1,18 +1,25 @@
 package com.example.luckycat.fragments
 
+import android.app.DownloadManager
+import android.content.Context
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.example.luckycat.R
-import com.example.luckycat.databinding.FragmentShowCatBinding
 import com.example.luckycat.databinding.FragmentShowSingleImageBinding
-
+import java.io.File
+import java.io.FileOutputStream
 
 private const val URL_IMAGE = "URL_IMAGE"
+private const val FOLDER_CAT = "/Luckycat/"
 
 class ShowSingleImage : Fragment() {
 
@@ -41,6 +48,39 @@ class ShowSingleImage : Fragment() {
         Glide.with(binding.image)
             .load(url)
             .into(binding.image)
+
+        binding.saveImageBt.setOnClickListener {
+            if (!isCallPermissionGranted()) requestCallPermissions()
+            if(isCallPermissionGranted())
+            saveImage()
+        }
+    }
+
+    private fun saveImage() {
+        val fileName = url!!.substring(url!!.lastIndexOf('/') + 1, url!!.length)
+        val request = DownloadManager.Request(Uri.parse(url))
+        request.setTitle(url)
+        request.setDescription("Downloading...")
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, FOLDER_CAT + fileName)
+        val manager = activity?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        manager.enqueue(request)
+    }
+
+    private fun isCallPermissionGranted(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            requireContext(),
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+    }
+
+    private fun requestCallPermissions() {
+        ActivityCompat.requestPermissions(
+            requireActivity(),
+            arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            100
+        )
     }
 
     companion object {

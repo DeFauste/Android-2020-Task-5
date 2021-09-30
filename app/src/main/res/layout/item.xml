@@ -26,6 +26,7 @@
             android:layout_height="match_parent"
             android:background="#DAB8B8"
             android:text="@string/example_text"
+            android:padding="10dp"
             />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>
