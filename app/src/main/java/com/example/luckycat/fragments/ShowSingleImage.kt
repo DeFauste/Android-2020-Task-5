@@ -6,17 +6,14 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.luckycat.databinding.FragmentShowSingleImageBinding
-import java.io.File
-import java.io.FileOutputStream
 
 private const val URL_IMAGE = "URL_IMAGE"
 private const val FOLDER_CAT = "/Luckycat/"
@@ -35,7 +32,8 @@ class ShowSingleImage : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentShowSingleImageBinding.inflate(inflater, container, false)
@@ -61,7 +59,7 @@ class ShowSingleImage : Fragment() {
         val request = DownloadManager.Request(Uri.parse(url))
         request.setTitle(url)
         request.setDescription("Downloading...")
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED) // ktlint-disable max-line-length
         request.setDestinationInExternalPublicDir(
             Environment.DIRECTORY_DOWNLOADS,
             FOLDER_CAT + fileName
@@ -75,7 +73,6 @@ class ShowSingleImage : Fragment() {
             requireContext(),
             android.Manifest.permission.WRITE_EXTERNAL_STORAGE
         ) == PackageManager.PERMISSION_GRANTED
-
     }
 
     private fun requestCallPermissions() {

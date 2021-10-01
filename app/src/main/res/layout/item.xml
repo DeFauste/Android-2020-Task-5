@@ -19,7 +19,7 @@
         android:id="@+id/cat_image"
         android:layout_width="140dp"
         android:layout_height="match_parent"
-        />
+        android:contentDescription="TODO" />
         <TextView
             android:id="@+id/cat_history"
             android:layout_width="210dp"

@@ -31,8 +31,8 @@ class RecyclerViewAdapter(private val itemClick: ItemClickListener) :
     class MyViewHolder(view: View, private val itemClick: ItemClickListener) :
         RecyclerView.ViewHolder(view) {
 
-        val imageView: ImageView = view.findViewById(R.id.cat_image)
-        val text = view.findViewById<TextView>(R.id.cat_history)
+        private val imageView: ImageView = view.findViewById(R.id.cat_image)
+        private val text = view.findViewById<TextView>(R.id.cat_history)
 
         fun bind(data: CatProperty) {
             text.text = data.imgSrcUrl
@@ -51,9 +51,8 @@ class RecyclerViewAdapter(private val itemClick: ItemClickListener) :
         }
 
         override fun areContentsTheSame(oldItem: CatProperty, newItem: CatProperty): Boolean {
-            return oldItem.id == newItem.id
-                    && oldItem.imgSrcUrl == newItem.imgSrcUrl
+            return oldItem.id == newItem.id &&
+                oldItem.imgSrcUrl == newItem.imgSrcUrl
         }
-
     }
 }
