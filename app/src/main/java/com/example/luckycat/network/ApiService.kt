@@ -20,9 +20,12 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService {
     @GET("/v1/images/search")
-    suspend fun getProperties(@Query("limit") size: Int, @Query("page") page:Int): List<CatProperty>
+    suspend fun getProperties(
+        @Query("limit") size: Int,
+        @Query("page") page: Int
+    ): List<CatProperty>
 }
 
 object CatApi {
-    val retrofitService : ApiService by lazy { retrofit.create(ApiService::class.java) }
+    val retrofitService: ApiService by lazy { retrofit.create(ApiService::class.java) }
 }

@@ -6,14 +6,14 @@ import androidx.paging.cachedIn
 import com.example.luckycat.data.CatImagesRepository
 
 class CatsListViewModel : ViewModel() {
-    var repository= CatImagesRepository()
+    var repository = CatImagesRepository()
 
-    var catsLiveData=
+    var catsLiveData =
         repository.letCatImagesLiveData().cachedIn(viewModelScope)
 
-    fun refresh(){
-        repository= CatImagesRepository()
-        catsLiveData=
+    fun refresh() {
+        repository = CatImagesRepository()
+        catsLiveData =
             repository.letCatImagesLiveData().cachedIn(viewModelScope)
     }
 }

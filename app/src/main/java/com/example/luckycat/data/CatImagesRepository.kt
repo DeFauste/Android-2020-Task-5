@@ -10,7 +10,7 @@ import com.example.luckycat.network.CatApi
 import com.example.luckycat.network.CatProperty
 import kotlinx.coroutines.flow.Flow
 
-class CatImagesRepository (private val catApiService: ApiService = CatApi.retrofitService) {
+class CatImagesRepository(private val catApiService: ApiService = CatApi.retrofitService) {
 
 
     private fun getDefaultPageConfig(): PagingConfig {

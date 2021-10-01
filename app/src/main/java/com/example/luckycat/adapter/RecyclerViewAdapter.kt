@@ -1,6 +1,5 @@
 package com.example.luckycat.adapter
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,10 +25,11 @@ class RecyclerViewAdapter(private val itemClick: ItemClickListener) :
     ): MyViewHolder {
         val inflater = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
 
-        return MyViewHolder(inflater,itemClick)
+        return MyViewHolder(inflater, itemClick)
     }
 
-    class MyViewHolder(view: View, private val itemClick: ItemClickListener) : RecyclerView.ViewHolder(view) {
+    class MyViewHolder(view: View, private val itemClick: ItemClickListener) :
+        RecyclerView.ViewHolder(view) {
 
         val imageView: ImageView = view.findViewById(R.id.cat_image)
         val text = view.findViewById<TextView>(R.id.cat_history)

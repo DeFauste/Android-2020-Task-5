@@ -51,8 +51,8 @@ class ShowSingleImage : Fragment() {
 
         binding.saveImageBt.setOnClickListener {
             if (!isCallPermissionGranted()) requestCallPermissions()
-            if(isCallPermissionGranted())
-            saveImage()
+            if (isCallPermissionGranted())
+                saveImage()
         }
     }
 
@@ -62,7 +62,10 @@ class ShowSingleImage : Fragment() {
         request.setTitle(url)
         request.setDescription("Downloading...")
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, FOLDER_CAT + fileName)
+        request.setDestinationInExternalPublicDir(
+            Environment.DIRECTORY_DOWNLOADS,
+            FOLDER_CAT + fileName
+        )
         val manager = activity?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         manager.enqueue(request)
     }

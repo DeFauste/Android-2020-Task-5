@@ -7,7 +7,7 @@ import com.example.luckycat.network.CatProperty
 import retrofit2.HttpException
 import java.io.IOException
 
-class CatImagePagingSource (val apiService: ApiService): PagingSource<Int, CatProperty>() {
+class CatImagePagingSource(val apiService: ApiService) : PagingSource<Int, CatProperty>() {
     override fun getRefreshKey(state: PagingState<Int, CatProperty>): Int? {
         return state.anchorPosition
     }
@@ -22,7 +22,7 @@ class CatImagePagingSource (val apiService: ApiService): PagingSource<Int, CatPr
             )
         } catch (exception: IOException) {
             return LoadResult.Error(exception)
-        } catch (exception: HttpException){
+        } catch (exception: HttpException) {
             return LoadResult.Error(exception)
         }
     }

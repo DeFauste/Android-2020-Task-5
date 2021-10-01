@@ -10,7 +10,7 @@ import com.example.luckycat.R
 import com.example.luckycat.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
-    private var _binding: FragmentMainBinding ?= null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,11 +26,11 @@ class MainFragment : Fragment() {
 
         val navigationFragment = Navigation.findNavController(view)
 
-        binding.showCat.setOnClickListener{
+        binding.showCat.setOnClickListener {
             navigationFragment.navigate(R.id.action_mainFragment_to_fragmentShowCat)
         }
 
-        binding.savedCat.setOnClickListener{
+        binding.savedCat.setOnClickListener {
             navigationFragment.navigate(R.id.action_mainFragment_to_fragmentShowLiked)
         }
     }
