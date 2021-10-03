@@ -14,6 +14,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.luckycat.databinding.FragmentShowSingleImageBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 private const val URL_IMAGE = "URL_IMAGE"
 private const val FOLDER_CAT = "/Luckycat/"
@@ -50,7 +53,9 @@ class ShowSingleImage : Fragment() {
         binding.saveImageBt.setOnClickListener {
             if (!isCallPermissionGranted()) requestCallPermissions()
             if (isCallPermissionGranted())
-                saveImage()
+                CoroutineScope(Dispatchers.IO).launch {
+                    saveImage()
+                }
         }
     }
 
