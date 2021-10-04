@@ -64,6 +64,13 @@ class FragmentShowCat : Fragment() {
                 progress.isVisible = state.refresh == LoadState.Loading
             }
         }
+        recyclerViewAdapter.addLoadStateListener { state ->
+            if (state.refresh == LoadState.Loading) {
+                recyclerViewAdapter.refresh()
+            } else if (state.refresh != LoadState.Loading) {
+                recyclerViewAdapter.retry()
+            }
+        }
     }
 
     private fun initRecyclerView() {

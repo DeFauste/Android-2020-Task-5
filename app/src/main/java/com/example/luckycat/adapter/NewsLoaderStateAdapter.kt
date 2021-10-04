@@ -45,7 +45,6 @@ class NewsLoaderStateAdapter() : LoadStateAdapter<NewsLoaderStateAdapter.ItemVie
     ) : ItemViewHolder(binding.root) {
 
         override fun bind(loadState: LoadState) {
-            // Do nothing
         }
 
         companion object {

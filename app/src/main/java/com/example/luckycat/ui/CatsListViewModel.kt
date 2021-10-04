@@ -7,7 +7,6 @@ import com.example.luckycat.data.CatImagesRepository
 
 class CatsListViewModel : ViewModel() {
     private var repository = CatImagesRepository()
-
     var catsLiveData =
         repository.letCatImagesLiveData().cachedIn(viewModelScope)
 }
