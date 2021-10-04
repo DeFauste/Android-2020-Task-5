@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -32,12 +31,12 @@ class RecyclerViewAdapter(private val itemClick: ItemClickListener) :
         RecyclerView.ViewHolder(view) {
 
         private val imageView: ImageView = view.findViewById(R.id.cat_image)
-        private val text = view.findViewById<TextView>(R.id.cat_history)
 
         fun bind(data: CatProperty) {
-            text.text = data.imgSrcUrl
             Glide.with(imageView)
                 .load(data.imgSrcUrl)
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_broken_image)
                 .into(imageView)
             imageView.setOnClickListener {
                 itemClick.onItemClick(data.imgSrcUrl)
