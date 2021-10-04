@@ -18,29 +18,18 @@
         app:layout_constraintRight_toRightOf="parent"
         android:contentDescription="TODO"
         />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/show_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:background="@drawable/bt_background"
         android:text="@string/text_main_bt_show"
         android:textColor="@color/black"
-        android:background="@drawable/bt_background"
-        app:layout_constraintTop_toTopOf="@id/page_cat"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="@id/page_cat"
         app:layout_constraintRight_toRightOf="@id/page_cat"
-        android:layout_marginTop="180dp"
-        />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/saved_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment_main_bt_saved"
-        android:textColor="@color/white"
-        android:background="@drawable/bt_background"
-        app:layout_constraintTop_toBottomOf="@+id/show_cat"
-        app:layout_constraintLeft_toLeftOf="@id/page_cat"
-        app:layout_constraintRight_toRightOf="@id/page_cat"
-        android:layout_marginTop="5dp"
-        />
+        app:layout_constraintTop_toTopOf="@id/page_cat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

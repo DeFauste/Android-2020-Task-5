@@ -29,9 +29,5 @@ class MainFragment : Fragment() {
         binding.showCat.setOnClickListener {
             navigationFragment.navigate(R.id.action_mainFragment_to_fragmentShowCat)
         }
-
-        binding.savedCat.setOnClickListener {
-            navigationFragment.navigate(R.id.action_mainFragment_to_fragmentShowLiked)
-        }
     }
 }

@@ -29,11 +29,11 @@
             android:visibility="gone" />
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/refresh_bt"
+    <ImageView
+        android:id="@+id/error_connect"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_connection_error"
         android:visibility="gone"
-        android:text="@string/refresh"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

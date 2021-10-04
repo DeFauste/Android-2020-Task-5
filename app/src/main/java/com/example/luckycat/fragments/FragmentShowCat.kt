@@ -62,6 +62,7 @@ class FragmentShowCat : Fragment() {
             with(binding) {
                 recycler.isVisible = state.refresh != LoadState.Loading
                 progress.isVisible = state.refresh == LoadState.Loading
+                errorConnect.isVisible = state.refresh == LoadState.Loading
             }
         }
         recyclerViewAdapter.addLoadStateListener { state ->
